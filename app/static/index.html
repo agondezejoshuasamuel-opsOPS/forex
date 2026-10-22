@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Forex Curve Analyzer V1</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+  <header>
+    <div>
+      <p class="eyebrow">REAL-TIME FOREX ANALYZER</p>
+      <h1>EUR/USD Curve</h1>
+      <p class="sub">A plain-English view of what the current price movement and indicators are saying.</p>
+    </div>
+    <div class="mode" id="mode">CONNECTING...</div>
+  </header>
+
+  <section class="notice">
+    <strong>What is happening?</strong>
+    <span id="headline">Waiting for market data...</span>
+  </section>
+
+  <section class="stats">
+    <div><span>Live price</span><strong id="price">—</strong></div>
+    <div><span>Curve</span><strong id="state">—</strong></div>
+    <div><span>Trend score</span><strong id="score">—</strong></div>
+    <div><span>RSI 14</span><strong id="rsi">—</strong></div>
+  </section>
+
+  <section class="chart-card">
+    <div class="chart-head">
+      <div><strong>Price curve</strong><small>Last 160 one-minute candles</small></div>
+      <div class="legend">
+        <span><i class="price-dot"></i> Price</span>
+        <span><i class="ema20-dot"></i> EMA20</span>
+        <span><i class="ema50-dot"></i> EMA50</span>
+      </div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="chart" aria-label="EUR/USD price curve"></canvas>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Indicator readings</h2>
+      <dl>
+        <div><dt>EMA 20</dt><dd id="ema20">—</dd></div>
+        <div><dt>EMA 50</dt><dd id="ema50">—</dd></div>
+        <div><dt>MACD</dt><dd id="macd">—</dd></div>
+        <div><dt>MACD signal</dt><dd id="macdSignal">—</dd></div>
+        <div><dt>ATR 14</dt><dd id="atr">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h2>Why am I seeing this?</h2>
+      <ul id="reasons"><li>Waiting for enough candles...</li></ul>
+    </div>
+
+    <div class="panel wide">
+      <h2>Human explanation</h2>
+      <ul id="details"><li>The application will explain the current indicators here.</li></ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>Version 1 · Analysis only</span>
+    <span>Not financial advice · No trades are placed</span>
+  </footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
